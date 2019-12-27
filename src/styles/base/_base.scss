@@ -1,0 +1,54 @@
+@import-normalize;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+html { 
+  background: url(../../assets/Hero.jpeg) no-repeat center center; 
+  background-size: cover;
+  height: 650vh;
+
+  font-size: 62.5%;
+
+  @include respond(tab-land) { // width < 1200px?
+    font-size: 56.25%; // 1rem = 9px; 9/16 = 56.25%
+    height: 600vh;
+    
+  }
+
+  @include respond(tab-port-big) { // width < 900px?
+    font-size: 50%; // 1rem = 8px; 8/16 = 50%
+    height: 550vh;
+  }
+
+  @include respond(tab-port) { // width < 800px?
+    font-size: 50%; // 1rem = 8px; 8/16 = 50%
+    height: 425vh;
+  }
+
+  @include respond(phone) { // width < 600px?
+      font-size: 46.428%; // 1 rem = 6.5px; 6.5/16 = 46.428%
+      height: 285vh;
+  }
+
+  @include respond(small-phone) { // width < 400px?
+    font-size: 31.25%;
+    height: 225vh;
+  }
+
+  @include respond(big-desktop) {
+    font-size: 75%; // 1rem = 12px; 12/16 = 75%
+    height: 650vh;
+  }
+}
