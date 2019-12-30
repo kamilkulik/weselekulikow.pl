@@ -1,0 +1,22 @@
+.buttonBig {
+    &,
+    &:link,
+    &:visited {
+        color: white;
+        font-size: 5rem;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        background-color: transparent;
+        
+        outline: white solid .5rem;
+        padding: .5rem .5rem;
+        display: inline-block;
+
+        cursor: pointer;
+    }
+
+    &--location {
+
+    }
+}
