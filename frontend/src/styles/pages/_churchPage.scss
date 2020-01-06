@@ -1,0 +1,54 @@
+.churchPage {
+  background-image: linear-gradient(to bottom right, $color-secondary-light, $color-secondary-dark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.church-wrapper {
+  display: flex;
+  width: 70vw;
+  height: 70vh;
+  color: $color-primary;
+
+  &__left {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__bottom {
+      display: flex;
+      flex-wrap: nowrap;
+      margin-top: 2rem;
+
+      & p {
+        margin: 0 0 0 2rem;
+      }
+    }
+  }
+
+  &__right {
+    width: 65%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.church-img {
+
+  width: 50vw;
+  margin-left: 8rem;
+
+  &--sign {
+    width: 20vw;
+    margin-bottom: 5rem;
+  }
+
+  &--ico {
+    width: 2rem;
+  }
+}

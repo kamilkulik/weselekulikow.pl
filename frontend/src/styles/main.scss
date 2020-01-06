@@ -2,10 +2,13 @@
 @import './abstracts/variables';
 
 @import './base/base';
+@import './base/typography';
 
 @import './components/ButtonBig.scss';
 @import './components//Navigation';
 
 @import './pages/acceptInvite';
+@import './pages/churchPage';
+@import './pages/datePage';
 @import './pages/homePage';
 @import './pages/landingPage';

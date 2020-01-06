@@ -1,8 +1,8 @@
 import React from 'react';
 
 const ButtonBig = (props) => (
-    <div>
-        <button className="buttonBig">{props.message}</button>
+    <div className="btn from-left">
+        {props.message}
     </div>
 );
 

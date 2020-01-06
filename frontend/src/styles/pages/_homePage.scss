@@ -1,33 +1,3 @@
-.homeBackground { 
-    background: url(../../assets/Hero.jpeg) no-repeat center center; 
-    background-size: cover;
-    height: 650vh;
-  
-    @include respond(tab-land) { // width < 1200px?
-      height: 600vh;
-    }
-  
-    @include respond(tab-port-big) { // width < 900px?
-      height: 550vh;
-    }
-  
-    @include respond(tab-port) { // width < 800px?
-      height: 425vh;
-    }
-  
-    @include respond(phone) { // width < 600px?
-        height: 285vh;
-    }
-  
-    @include respond(small-phone) { // width < 400px?
-      height: 225vh;
-    }
-  
-    @include respond(big-desktop) {
-      height: 650vh;
-    }
-  }
-
   .section-header {
     height: 100vh;
   }

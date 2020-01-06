@@ -1,10 +1,10 @@
 const pageIndex = {
   date: 'Data',
-  accept: 'Potwierdź obecność',
   church: 'Kościół',
   reception: 'Sala Weselna',
   hotel: 'Hotel',
   mapPage: 'Mapa',
+  accept: 'Potwierdź obecność',
   footer: 'Kontakt'
 };
 
