@@ -33,13 +33,13 @@
     @if $breakpoint == phone {
         @media only screen and (max-width: 37.5em) { @content}; // 600px
     }
-
-    @if $breakpoint == tab-port {
-        @media only screen and (max-width: 50em) { @content}; // 800px
+    
+    @if $breakpoint == tab-port-small {
+        @media only screen and (max-width: 43.75em) { @content}; // 700px
     }
 
-    @if $breakpoint == tab-port-big {
-        @media only screen and (max-width: 56.25em) { @content}; // 900px
+    @if $breakpoint == tab-port {
+        @media only screen and (max-width: 56.25em) { @content}; // 800px
     }
 
     @if $breakpoint == tab-land {
@@ -47,7 +47,7 @@
     }
 
     @if $breakpoint == big-desktop {
-        @media only screen and (min-width: 112.5em) { @content}; // 1800px
+        @media only screen and (min-width: 93.75em) { @content}; // 1500px
     }
 
     @if $breakpoint == port-desktop {
