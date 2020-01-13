@@ -6,6 +6,12 @@
     }
 }
 
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 @mixin center-hor-ver {
     position: absolute;
     top: 50%;

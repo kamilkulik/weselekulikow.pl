@@ -1,5 +1,7 @@
 import React from 'react';
 import axios from 'axios';
+import ConfirmationThanks from './ConfirmationThanks';
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 export default class ConfirmationForm extends React.Component {
   constructor(props) {
@@ -9,7 +11,8 @@ export default class ConfirmationForm extends React.Component {
     this.state = {
       isGoing: 'tak',
       name: '',
-      numberOfGuests: 2
+      numberOfGuests: 2,
+      formSent: false
     }
   };
   handleChange(e) {
@@ -26,40 +29,56 @@ export default class ConfirmationForm extends React.Component {
       name: this.state.name,
       numberOfGuests: this.state.numberOfGuests
     })
+    .then(() => {
+      this.setState({ formSent: true });
+    })
     .catch(err => (console.log(err)));
   };
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <p>Potwierdzasz przybycie?</p>
-        <label>
+      <form onSubmit={this.handleSubmit} className="form">
+        <p className="form__p">Potwierdzasz przybycie?</p>
+        <div className="form__group">
+        <div className="form__radio-group">
           <input 
             type="radio"
             name="isGoing"
             value="tak"
             checked={this.state.isGoing === "tak"}
             onChange={this.handleChange}
+            className="form__radio-input"
+            id="tak"
           />
-          Tak
-        </label>
-        <label>
-        <input 
-          type="radio"
-          name="isGoing"
-          value="nie"
-          checked={this.state.isGoing === "nie"}
-          onChange={this.handleChange}
-        />
-        Nie
-      </label>
-        <br />
-        {this.state.isGoing === "tak" && <div>
-          <label>Imię i nazwisko:
-            <input type="text" onChange={this.handleChange} name="name" value={this.state.name} required />
+          <label className="form__radio-label" for="tak">
+            <span className="form__radio-button"></span>Tak
           </label>
-          <br />
-          <label>Ilość osób: 
-            <select value={this.state.numberOfGuests} onChange={this.handleChange} name="numberOfGuests" required>
+        </div>
+        <div className="form__radio-group">
+          <input 
+            type="radio"
+            name="isGoing"
+            value="nie"
+            checked={this.state.isGoing === "nie"}
+            onChange={this.handleChange}
+            className="form__radio-input"
+            id="nie"
+          />
+          <label className="form__radio-label" for="nie">
+            <span className="form__radio-button"></span>Nie
+          </label>
+        </div>
+        </div>
+      <TransitionGroup component={null}>
+        {this.state.isGoing === "tak" && (
+          <CSSTransition classNames="form" timeout={300}>
+          <div className="form__fields--wrapper">
+          <div className="form__fields--line">
+            <label className="form__label">Imię i nazwisko:</label>
+            <input className="form__input" type="text" onChange={this.handleChange} name="name" value={this.state.name} required />
+          </div>
+          <div className="form__fields--line">
+          <label className="form__label">Ilość osób:</label>
+            <select className="form__input" value={this.state.numberOfGuests} onChange={this.handleChange} name="numberOfGuests" required>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -67,12 +86,39 @@ export default class ConfirmationForm extends React.Component {
               <option value="5">5</option>
               <option value="6">6</option>
             </select>
-          </label>
-        </div>}
-        <br />
+            </div>
+        </div>
+        </CSSTransition>
+        )}
+        </TransitionGroup>
+        <TransitionGroup component={null}>
+        {this.state.isGoing === "nie" && (
+          <CSSTransition classNames="form" timeout={300}>
+          <div className="form__fields--wrapper">
+          <div className="form__fields--line">
+            <label className="form__label">Imię i nazwisko:</label>
+            <input className="form__input" type="text" onChange={this.handleChange} name="name" value={this.state.name} required />
+          </div>
+          </div>
+          </CSSTransition>
+        )}
+        </TransitionGroup>
+        <TransitionGroup component={null}>
+        {this.state.formSent && (
+          <CSSTransition classNames="form" timeout={300}>
+          <div className="form__fields--wrapper">
+            <ConfirmationThanks 
+              message="Dziękujemy za przyjęcie zaproszenia!"
+              thanks="Do zobaczenia!"
+            />
+          </div>
+          </CSSTransition>
+        )}
+        </TransitionGroup>
         <input 
           type="submit" 
           value={this.state.isGoing === "tak" ? "Potwierdź przybycie" : "Potwierdź, że Cię nie będzie :("}
+          className="btn-small btn-small--animated"
           />
       </form>
     )

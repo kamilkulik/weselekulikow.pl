@@ -45,7 +45,7 @@
       right: 6.5rem;
       background-image: radial-gradient($color-primary, $color-primary-dark);
       z-index: 999;
-      transition: transform .8s cubic-bezier(0.86, 0, 0.07, 1); //function sourced from: https://easings.net/en#easeInOutQuint. Bezier function defines how animation happens over time
+      transition: transform .6s cubic-bezier(0.86, 0, 0.07, 1); //function sourced from: https://easings.net/en#easeInOutQuint. Bezier function defines how animation happens over time
 
       @include respond(tab-port) {
           top: 4.5rem;
@@ -77,6 +77,13 @@
       list-style: none;
       text-align: center;
       line-height: 1;
+      width: 70vw;
+
+      @include respond(phone) {
+          width: 80vw;
+          margin: 0;
+          padding: 0;
+      }
   }
 
   &__item {
@@ -88,7 +95,7 @@
       &:link,
       &:visited {
           display: inline-block;
-          font-size: 3rem;
+          font-size: 5rem;
           font-weight: 300;
           padding: 1rem 2rem;
           color: $color-secondary-light;
@@ -97,6 +104,10 @@
           background-image: linear-gradient(120deg, transparent 0%, 50%, transparent 50%, $color-secondary-light 50%);
           background-size: 230%; //220% to cover the entire length of the line
           transition: all .4s;
+
+          @include respond(phone) {
+              font-size: 4rem;
+          }
 
           & span {
               margin-right: 1.5rem;

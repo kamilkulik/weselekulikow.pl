@@ -1,0 +1,20 @@
+.ornamental-wrapper,
+.ornamental-wrapper--accept {
+  background-image: url('../../assets/Artboard_11.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 80vh;
+  width: 80vw;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include center-hor-ver;
+
+  @include respond(tab-port) {
+    height: 80vh;
+    width: 95vw;
+  }
+}

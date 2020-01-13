@@ -1,0 +1,31 @@
+.conf-opts {
+
+  margin-top: 2rem;
+  display: flex;
+
+  &__ico {
+    width: 10vw;
+    cursor: pointer;
+
+    &:not(:last-child) {
+      margin-right: 5rem;
+    }
+
+    & path {
+      fill: $color-secondary-dark;
+      //transition: all .4s;
+
+      // &::after {
+      //   content: "";
+      //   width: 5rem; 
+      //   height: 5rem;
+      //   display: block;
+      // }
+
+      // &:hover {
+      //   fill: $color-secondary-light;
+      //   transform: translateY(-.5rem);
+      // }
+    }
+  }
+}

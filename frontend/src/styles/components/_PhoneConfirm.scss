@@ -1,0 +1,18 @@
+.phone-confirm {
+  text-align: center;
+
+  &__tel,
+  &__tel:link,
+  &__tel:visited {
+    font-size: 4rem;
+    color: $color-secondary-dark;
+    font-family: inherit;
+    transition: all .4s;
+
+    &:hover {
+      color: $color-secondary-light;
+      transform: translateY(-.5rem);
+      text-shadow: 0 1rem 2rem rgba($color-black, .3)
+    }
+  }
+}

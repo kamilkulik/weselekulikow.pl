@@ -1,0 +1,48 @@
+@keyframes pulse {
+  0% {
+    color: $color-secondary-dark;
+    border: 3px solid $color-secondary-dark;
+  }
+
+  20% {
+    color: $color-secondary-light;
+    border: 3px solid $color-secondary-light;
+    box-shadow: 0 0 1.5rem rgba($color-secondary-light,.4);
+  }
+
+  40% {
+    color: $color-secondary-dark;
+    border: 3px solid $color-secondary-dark;
+  }
+
+  60% {
+    color: $color-secondary-light;
+    border: 3px solid $color-secondary-light;
+    box-shadow: 0 0 1.5rem rgba($color-secondary-light,.4);
+  }
+
+  80% {
+    color: $color-secondary-dark;
+    border: 3px solid $color-secondary-dark;
+  }
+
+  100% {
+    color: $color-secondary-light;
+    border: 3px solid $color-secondary-light;
+  }
+
+}
+
+@keyframes hovering {
+  0% {
+    transform: translateY(0rem);
+  }
+
+  50% {
+    transform: translateY(-3rem);
+  }
+
+  0% {
+    transform: translateY(0rem);
+  }
+}

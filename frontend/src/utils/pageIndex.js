@@ -5,7 +5,7 @@ const pageIndex = {
   hotel: 'Hotel',
   mapPage: 'Mapa',
   accept: 'Potwierdź obecność',
-  footer: 'Kontakt'
+  //footer: 'Kontakt'
 };
 
 export default pageIndex;

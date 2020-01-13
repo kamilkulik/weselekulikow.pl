@@ -2,6 +2,7 @@ import React from 'react';
 import ConfirmationForm from '../components/ConfirmationForm';
 import PhoneConfirm from '../components/PhoneConfirm';
 import ConfirmationOptions from '../components/ConfirmationOptions';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 export default class AcceptInvite extends React.Component {
   constructor(props) {
@@ -21,18 +22,28 @@ export default class AcceptInvite extends React.Component {
 
     if (state === 'phone') {
       option = (
+        <CSSTransition classNames="form" timeout={300}>
         <div>
           <PhoneConfirm phoneNo="884 947 484‬" name="Wojciecha"/>
           <PhoneConfirm phoneNo="609 851 643‬" name="Eweliny"/>
         </div>
+        </CSSTransition>
       );
     } else if (state === 'email') {
-      option = <ConfirmationForm />
+      option = (
+        <CSSTransition classNames="form" timeout={300}>
+        <ConfirmationForm />
+        </CSSTransition>
+      )
     }
     return (
-      <section id="accept" className="section-accept">
-        <p>Wybierz jak chciałbyś potwierdzić swoje przybycie:</p>
-        { state === undefined ? options : option }
+      <section id="accept" className="section-accept acceptPage acceptInvitePage">
+        <div className="ornamental-wrapper--accept invite-wrapper">
+          { state === undefined && <p>Wybierz jak potwierdzisz swoje przybycie:</p>}
+          <TransitionGroup component={null}>
+              { state === undefined ? options : option }
+          </TransitionGroup>
+        </div>
       </section>
     );
   }

@@ -1,10 +1,17 @@
 import React from 'react';
+import ReceptionImage from '../assets/Artboard_6.png';
+import ReceptionSign from '../assets/Artboard_3.png';
+import Section from '../components/Section';
 
 const Reception = () => (
   <div>
-    <section id="reception" className="section-reception">
-      <p>This is the reception section</p>
-    </section>
+    <Section 
+    id={"reception"}
+    description={'Klimatyczna sala, niepowtarzala atmosfera, piękny kwiatowy ogród. Czego chcieć więcej?'}
+    sectionSign={ReceptionSign}
+    address={'ul. Opatowicka 11'}
+    sectionImg={ReceptionImage}
+    />
   </div>
 );
 

@@ -1,25 +1,6 @@
 .datePage {
   background-image: linear-gradient(to right, $color-primary, $color-primary);
-}
-
-.date-wrapper {
-  background-image: url('../../assets/Artboard_11.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 80vh;
-  width: 80vw;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  @include center-hor-ver;
-
-  @include respond(tab-port) {
-    height: 80vh;
-    width: 95vw;
-  }
+  position: relative;
 }
 
 .date-box {
@@ -30,7 +11,7 @@
   @include center-hor-ver;
 
   &__date {
-    font-size: 14rem;
+    font-size: 13rem;
     margin: 1rem 0 1rem 0;
 
     background-image: linear-gradient(to bottom right, $color-secondary-light, $color-secondary-dark);

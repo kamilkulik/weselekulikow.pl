@@ -1,6 +1,5 @@
 import React from 'react';
 import { NavHashLink as NavLink } from 'react-router-hash-link';
-//import { HashLink as Link } from 'react-router-hash-link';
 import { BrowserRouter } from 'react-router-dom';
 import pageIndex from '../utils/pageIndex';
 
@@ -28,7 +27,7 @@ export default class Navigation extends React.Component {
         <div className="navigation__background">&nbsp;</div>
 
         <nav className="navigation__nav">
-          <ul className="navigation__list">
+          {!this.state.open && <ul className="navigation__list">
             <BrowserRouter>
               {Object.entries(pageIndex).map(([key, value], index) => {
                 return (
@@ -41,7 +40,7 @@ export default class Navigation extends React.Component {
                 )
               })}
             </BrowserRouter>
-          </ul>
+          </ul>}
         </nav>
       </div>
     )

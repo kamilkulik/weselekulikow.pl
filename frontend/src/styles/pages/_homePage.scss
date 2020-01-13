@@ -1,5 +1,10 @@
   .section-header {
+    background-image: url('../../assets/header_comp.jpeg');
+    background-size: cover;
+    background-repeat: none;
+    background-position: center;
     height: 100vh;
+    position: relative;
   }
 
   .section-date {

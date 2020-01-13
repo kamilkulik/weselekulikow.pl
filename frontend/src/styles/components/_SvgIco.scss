@@ -1,0 +1,24 @@
+.svg {
+
+  &-wrapper {
+
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+
+  &-icon {
+
+    & path{
+      fill: $color-secondary-light;
+    }
+  }
+
+  &-chevron {
+
+    animation: 2s 0s hovering;
+    animation-fill-mode: backwards;
+    animation-iteration-count: infinite;
+  }
+}

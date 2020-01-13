@@ -4,7 +4,7 @@ import DateCounter from '../components/DateCounter';
 const DatePage = () => (
   <div>
     <section id="date" className="section-date datePage">
-      <div className="date-wrapper">
+      <div className="ornamental-wrapper">
         <DateCounter />
       </div>
     </section>
