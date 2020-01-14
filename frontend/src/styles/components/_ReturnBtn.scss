@@ -1,0 +1,33 @@
+.btn-ret {
+
+  &__wrapper {
+    display: flex;
+    line-height: 1rem;
+    align-items: center;
+    z-index: 999;
+    
+
+    &--phone {
+      
+      @include respond(tab-port) {
+        margin-bottom: 5rem;
+      }
+    }
+  }
+
+  &__ico {
+    cursor: pointer;
+
+    & path {
+      fill: $color-secondary-dark;
+    }
+  }
+
+  &__p {
+    color: $color-secondary-dark;
+    font-size: 2rem;
+    margin: 0;
+    cursor: pointer;
+
+  }
+}

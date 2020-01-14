@@ -11,4 +11,10 @@
       transform: translate(-50%, -50%);
       text-align: center;
     };
+
+    @include respond(tab-port) {
+      background: url(../../assets/mobile_comp.jpg) no-repeat;
+      background-position: top;
+      background-size: cover;
+    }
 };

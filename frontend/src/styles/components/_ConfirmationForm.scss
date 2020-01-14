@@ -10,9 +10,35 @@
     width: 80vw;
   }
 
+  &-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: -8rem;
+    height: 35vh;
+    width: 35vw;
+
+    @include respond(tab-port) {
+      height: 40vh;
+      width: 80vw;
+    }
+
+    @include respond(phone) {
+      height: 40vh;
+      width: 80vw;
+    }
+
+    @include respond(phone-land) {
+      width: 35vw;
+      height: 50vh;
+    }
+
+  }
+
   &__p {
     text-align: center;
     margin: 0;
+    color: $color-secondary-dark;
 
     &--options {
 
@@ -143,6 +169,7 @@
     display: flex;
     flex-direction: column;
     color: $color-secondary-dark;
+    text-align: center;
 
     @include flex-center;
 
@@ -154,6 +181,14 @@
     &__bigText {
       font-size: 6rem;
       margin: 0;
+
+      @include respond(tab-land) {
+        font-size: 5rem;
+      }
+
+      @include respond(phone) {
+        font-size: 4rem;
+      }
     }
   }
 }
@@ -161,25 +196,17 @@
 
 // SMOOTH TRANSITIONS
 
-.form-enter {
-  opacity: 0.01;
-  transform: scale(1.1);
+.formTran-enter {
+  opacity: 0;
 }
-
-.form-enter-active {
+.formTran-enter-active {
   opacity: 1;
-  transform: scale(1);
-  transition: all 300ms;
+  transition: opacity 500ms ease-in;
 }
-
-.form-exit {
+.formTran-exit {
   opacity: 1;
-  transform: scale(1);
 }
-
-.form-exit-active {
-  opacity: 0.01;
-  transform: scale(1.1);
-  transition: all 300ms;
+.formTran-exit-active {
+  opacity: 0;
+  transition: opacity 500ms ease-in;
 }
-

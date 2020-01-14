@@ -73,7 +73,7 @@ export default class ConfirmationForm extends React.Component {
         </div>
       <TransitionGroup component={null}>
         {this.state.isGoing === "tak" && (
-          <CSSTransition classNames="form" timeout={300}>
+          <CSSTransition classNames="formTran" timeout={300}>
           <div className="form__fields--wrapper">
           <div className="form__fields--line">
             <label className="form__label">Imię i nazwisko:</label>
@@ -96,7 +96,7 @@ export default class ConfirmationForm extends React.Component {
         </TransitionGroup>
         <TransitionGroup component={null}>
         {this.state.isGoing === "nie" && (
-          <CSSTransition classNames="form" timeout={300}>
+          <CSSTransition classNames="formTran" timeout={300}>
           <div className="form__fields--wrapper">
           <div className="form__fields--line">
             <label className="form__label">Imię i nazwisko:</label>
@@ -114,7 +114,7 @@ export default class ConfirmationForm extends React.Component {
     </form>
       ) : (
         this.state.formSent && (
-          <CSSTransition classNames="form" timeout={300}>
+          <CSSTransition classNames="formTran" timeout={300}>
           <div className="form__fields--wrapper">
             <ConfirmationThanks 
               message={this.state.isGoing === "tak" ? "Dziękujemy za przyjęcie zaproszenia!" : "Przykro nam, że Cię nie będzie. Dziękujemy, że dałeś/aś nam znać."}

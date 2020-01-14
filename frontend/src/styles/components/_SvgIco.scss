@@ -7,6 +7,10 @@
     left: 50%;
     transform: translate(-50%,-50%);
 
+    @include respond(phone) {
+      top: 80%;
+    }
+
     &__link {
       cursor: pointer;
     }

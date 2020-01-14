@@ -6,7 +6,7 @@ const Section = (props) => (
     <section id={props.id} className={`section section-${props.id} section--${props.id}`}>
       <div className={`section-wrapper section-wrapper--${props.id}`}>
         <div className="section-wrapper__left">
-          <img src={props.sectionSign} alt={props.id} className="section-img--sign"/>
+          <img src={props.sectionSign} alt={props.id} className={`section-img--sign ${props.customClass}`}/>
             <div className="section-wrapper__left__paragraph">
               <p>{props.description}</p>
             </div>

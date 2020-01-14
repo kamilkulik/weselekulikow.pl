@@ -24,13 +24,17 @@
     }
 
     @include respond(phone) {
-      font-size: 10rem;
+      font-size: 8rem;
       margin: 1rem 0 1rem 0;
     }
 
     @include respond(small-phone) {
       font-size: 6rem;
       margin: 0;
+    }
+
+    @include respond(phone-land) {
+      font-size: 8rem;
     }
   }
 }

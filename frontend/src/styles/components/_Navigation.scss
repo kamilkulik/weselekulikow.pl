@@ -109,6 +109,10 @@
               font-size: 4rem;
           }
 
+          @include respond(phone-land) {
+            font-size: 4rem;
+        }
+
           & span {
               margin-right: 1.5rem;
               display: inline-block;

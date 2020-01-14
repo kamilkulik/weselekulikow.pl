@@ -11,6 +11,7 @@ const Reception = () => (
     sectionSign={ReceptionSign}
     address={'ul. Opatowicka 11'}
     sectionImg={ReceptionImage}
+    customClass={"section-img--sign__podKasztanami"}
     />
   </div>
 );

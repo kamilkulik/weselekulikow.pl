@@ -3,27 +3,37 @@ import ConfirmationForm from '../components/ConfirmationForm';
 import PhoneConfirm from '../components/PhoneConfirm';
 import ConfirmationOptions from '../components/ConfirmationOptions';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import ReturnBtn from '../components/ReturnBtn';
 
 export default class AcceptInvite extends React.Component {
   constructor(props) {
     super(props)
     this.handleClick = this.handleClick.bind(this);
+    this.returnBack = this.returnBack.bind(this);
     this.state = {
       option: undefined
     }
+  }
+  returnBack() {
+    this.setState({ option: undefined});
   }
   handleClick(value) {
     this.setState({ option: value })
   }
   render() {
     const state = this.state.option;
-    const options = <ConfirmationOptions handleClick={this.handleClick}/>;
+    const options = (
+      //<CSSTransition classNames="formTran" timeout={300}>
+          <ConfirmationOptions handleClick={this.handleClick}/>
+      //</CSSTransition>
+    );
     let option;
 
     if (state === 'phone') {
       option = (
-        <CSSTransition classNames="form" timeout={300}>
-        <div>
+        <CSSTransition classNames="formTran" timeout={300}>
+        <div className="form-container">
+          <ReturnBtn message="Wróć" returnBack={this.returnBack}/>
           <PhoneConfirm phoneNo="884 947 484‬" name="Wojciecha"/>
           <PhoneConfirm phoneNo="609 851 643‬" name="Eweliny"/>
         </div>
@@ -31,8 +41,11 @@ export default class AcceptInvite extends React.Component {
       );
     } else if (state === 'email') {
       option = (
-        <CSSTransition classNames="form" timeout={300}>
-        <ConfirmationForm />
+        <CSSTransition classNames="formTran" timeout={300}>
+        <div className="form-container">
+          <ReturnBtn message="Wróć" returnBack={this.returnBack}/>
+          <ConfirmationForm />
+        </div>
         </CSSTransition>
       )
     }
@@ -40,7 +53,7 @@ export default class AcceptInvite extends React.Component {
       <section id="accept" className="section-accept acceptPage acceptInvitePage">
         <div className="ornamental-wrapper--accept ornamental-wrapper--accept--mobile invite-wrapper ">
           { state === undefined && <p className="form__p form__p--options">Wybierz jak potwierdzisz swoje przybycie:</p>}
-          <TransitionGroup component={null}>
+          <TransitionGroup component={null} className="OptionsTransitions">
               { state === undefined ? options : option }
           </TransitionGroup>
         </div>

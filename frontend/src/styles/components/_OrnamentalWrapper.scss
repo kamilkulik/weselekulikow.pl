@@ -28,5 +28,10 @@
       height: 80vh;
       width: 95vw;
     }
+
+    @include respond(phone-land) {
+      height: 90vh;
+      width: 70vw;
+    }
   }
 }
