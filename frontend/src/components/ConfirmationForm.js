@@ -36,7 +36,10 @@ export default class ConfirmationForm extends React.Component {
   };
   render() {
     return (
-      <form onSubmit={this.handleSubmit} className="form">
+      <>
+      <TransitionGroup component={null}>
+      {!this.state.formSent ? (
+        <form onSubmit={this.handleSubmit} className="form">
         <p className="form__p">Potwierdzasz przybycie?</p>
         <div className="form__group">
         <div className="form__radio-group">
@@ -103,24 +106,26 @@ export default class ConfirmationForm extends React.Component {
           </CSSTransition>
         )}
         </TransitionGroup>
-        <TransitionGroup component={null}>
-        {this.state.formSent && (
+        <input 
+        type="submit" 
+        value={this.state.isGoing === "tak" ? "Potwierdź przybycie" : "Potwierdź, że Cię nie będzie :("}
+        className="btn-small btn-small--animated"
+        />
+    </form>
+      ) : (
+        this.state.formSent && (
           <CSSTransition classNames="form" timeout={300}>
           <div className="form__fields--wrapper">
             <ConfirmationThanks 
-              message="Dziękujemy za przyjęcie zaproszenia!"
-              thanks="Do zobaczenia!"
+              message={this.state.isGoing === "tak" ? "Dziękujemy za przyjęcie zaproszenia!" : "Przykro nam, że Cię nie będzie. Dziękujemy, że dałeś/aś nam znać."}
+              thanks={this.state.isGoing === "tak" ? "Do zobaczenia!" : "Pozdrawiamy!"}
             />
           </div>
           </CSSTransition>
-        )}
-        </TransitionGroup>
-        <input 
-          type="submit" 
-          value={this.state.isGoing === "tak" ? "Potwierdź przybycie" : "Potwierdź, że Cię nie będzie :("}
-          className="btn-small btn-small--animated"
-          />
-      </form>
+        )
+      )}
+      </TransitionGroup>
+      </>
     )
   };
 };

@@ -3,12 +3,24 @@
   margin-top: 2rem;
   display: flex;
 
+  @include respond(phone) {
+    flex-direction: column;
+  }
+
   &__ico {
     width: 10vw;
     cursor: pointer;
 
+    @include respond(phone) {
+      width: 20vw;
+    }
+
     &:not(:last-child) {
       margin-right: 5rem;
+
+      @include respond(phone) {
+        margin: 0;
+      }
     }
 
     & path {

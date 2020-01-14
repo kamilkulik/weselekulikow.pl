@@ -10,17 +10,43 @@
 
     @include flex-center;
 
+    @include respond(phone) {
+      width: 50vw;
+    }
+
+    &--mobile {
+
+      @include respond(phone) {
+        width: 0;
+      }
+    }
+
     &--half {
       width: 10vw;
+
+      @include respond(phone) {
+        width: 0;
+      }
     }
   }
 
   &__sign {
     width: 100%;
+
+    @include respond(phone) {
+      align-self: flex-start;
+      margin-top: 12rem;
+      width: 20rem;
+    }
   }
 
   &__phone {
     height: 80vh;
     align-self: flex-end;
+    
+    @include respond(phone) {
+      height: 70vh;
+    }
+  
   }
 }

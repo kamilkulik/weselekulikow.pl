@@ -1,5 +1,9 @@
   .section-header {
-    background-image: url('../../assets/header_comp.jpeg');
+    background-image: linear-gradient(
+      to bottom, 
+      rgba($color-secondary-light, 0.3), 
+      rgba($color-secondary-dark, 0.00)),
+      url('../../assets/header_comp.jpg');
     background-size: cover;
     background-repeat: none;
     background-position: center;
@@ -29,6 +33,10 @@
 
   .section-map {
     height: 100vh;
+    display: flex;
+    background-image: linear-gradient(to bottom, $color-primary, $color-primary-dark);
+
+    @include flex-center;
   }
 
   .section-contact {

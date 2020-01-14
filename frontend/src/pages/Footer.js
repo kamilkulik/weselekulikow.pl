@@ -10,7 +10,7 @@ const Footer = () => (
         <div className="footer-col--half"></div>
         <div className="footer-col"><img src={FooterEv} alt="Ewelina" className="footer__sign"/></div>
         <div className="footer-col--half"></div>
-        <div className="footer-col"><img src={Phone} alt="phone" className="footer__phone"/></div>
+        <div className="footer-col footer-col--mobile"><img src={Phone} alt="phone" className="footer__phone"/></div>
         <div className="footer-col--half"></div>
         <div className="footer-col"><img src={FooterW} alt="Wojciech" className="footer__sign"/></div>
         <div className="footer-col--half"></div>

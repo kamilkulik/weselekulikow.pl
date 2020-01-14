@@ -4,16 +4,39 @@
   width: 35vw;
   transition: all .4s;
   text-align: center;
+  color: $color-secondary-dark;
+
+  @include respond(phone) {
+    width: 80vw;
+  }
 
   &__p {
     text-align: center;
     margin: 0;
+
+    &--options {
+
+      @include respond(phone) {
+        width: 60vw;
+      }
+    }
+
+
+    @include respond(phone) {
+      font-size: 3rem;
+      margin-bottom: 3rem;
+    }
   }
 
   &__label {
     width: 13rem;
     text-align: right;
     margin-right: 1rem;
+
+    @include respond(phone) {
+      font-size: 2rem;
+      width: 15rem;
+    }
   }
 
   &__input {
@@ -37,6 +60,10 @@
       justify-content: space-between;
       flex-direction: column;
       margin-bottom: 3rem;
+
+      @include respond(phone) {
+        margin-bottom: 4rem;
+      }
     }
 
     &--line {
@@ -114,16 +141,19 @@
 
   &-thanks {
     display: flex;
+    flex-direction: column;
     color: $color-secondary-dark;
 
     @include flex-center;
 
     &__smallText {
       font-size: 2rem;
+      margin-bottom: 1rem;
     }
 
     &__bigText {
-      font-size: 5rem;
+      font-size: 6rem;
+      margin: 0;
     }
   }
 }

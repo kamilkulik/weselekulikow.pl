@@ -16,6 +16,11 @@
   left: 50%;
   transform: translateX(-50%);
 
+  @include respond(phone) {
+    width: 60vw;
+    white-space:normal;
+  }
+
   &:hover {
     
     transform: translateY(-.5rem) translateX(-50%);

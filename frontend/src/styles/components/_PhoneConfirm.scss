@@ -1,6 +1,13 @@
 .phone-confirm {
   text-align: center;
 
+  &:not(:last-child) {
+
+    @include respond(phone) {
+      margin-bottom: 7rem;
+    }
+  }
+
   &__tel,
   &__tel:link,
   &__tel:visited {
