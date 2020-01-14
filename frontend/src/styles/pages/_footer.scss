@@ -10,13 +10,13 @@
 
     @include flex-center;
 
-    @include respond(phone) {
+    @include respond(tab-port) {
       width: 50vw;
     }
 
     &--mobile {
 
-      @include respond(phone) {
+      @include respond(tab-port) {
         width: 0;
       }
     }
@@ -24,7 +24,7 @@
     &--half {
       width: 10vw;
 
-      @include respond(phone) {
+      @include respond(tab-port) {
         width: 0;
       }
     }
@@ -33,7 +33,7 @@
   &__sign {
     width: 100%;
 
-    @include respond(phone) {
+    @include respond(tab-port) {
       align-self: flex-start;
       margin-top: 12rem;
       width: 20rem;
@@ -44,7 +44,7 @@
     height: 80vh;
     align-self: flex-end;
     
-    @include respond(phone) {
+    @include respond(tab-port) {
       height: 70vh;
     }
   

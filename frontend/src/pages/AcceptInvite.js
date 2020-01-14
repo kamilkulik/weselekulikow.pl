@@ -51,7 +51,7 @@ export default class AcceptInvite extends React.Component {
     }
     return (
       <section id="accept" className="section-accept acceptPage acceptInvitePage">
-        <div className="ornamental-wrapper--accept ornamental-wrapper--accept--mobile invite-wrapper ">
+        <div className="ornamental-wrapper--accept ornamental-wrapper--accept--mobile ornamental-wrapper--tab-port invite-wrapper">
           { state === undefined && <p className="form__p form__p--options">Wybierz jak potwierdzisz swoje przybycie:</p>}
           <TransitionGroup component={null} className="OptionsTransitions">
               { state === undefined ? options : option }

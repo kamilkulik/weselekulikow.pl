@@ -52,7 +52,7 @@ export default class ConfirmationForm extends React.Component {
             className="form__radio-input"
             id="tak"
           />
-          <label className="form__radio-label" for="tak">
+          <label className="form__radio-label" htmlFor="tak">
             <span className="form__radio-button"></span>Tak
           </label>
         </div>
@@ -66,7 +66,7 @@ export default class ConfirmationForm extends React.Component {
             className="form__radio-input"
             id="nie"
           />
-          <label className="form__radio-label" for="nie">
+          <label className="form__radio-label" htmlFor="nie">
             <span className="form__radio-button"></span>Nie
           </label>
         </div>

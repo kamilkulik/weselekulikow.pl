@@ -17,9 +17,34 @@
     height: 80vh;
     width: 95vw;
   }
+  
+  &--tab-port {
+
+    @include respond(tab-port) {
+      background-image: url('../../assets/Artboard_11_mobile.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 90vh;
+      width: 85vw;
+    }
+
+    @include respond(phone-land) {
+      height: 90vh;
+      width: 70vw;
+    }
+  }
 
   &--mobile {
-
+    
+    @include respond(phone-land) {
+      background-image: url('../../assets/Artboard_11.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 97vh;
+      width: 70vw;
+    }
     @include respond(phone) {
       background-image: url('../../assets/Artboard_11_mobile.png');
       background-size: contain;
@@ -29,9 +54,7 @@
       width: 95vw;
     }
 
-    @include respond(phone-land) {
-      height: 90vh;
-      width: 70vw;
-    }
   }
+
+
 }
