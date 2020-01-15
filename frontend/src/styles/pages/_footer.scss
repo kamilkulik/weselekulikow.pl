@@ -1,0 +1,52 @@
+.footer {
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  background-image: linear-gradient(to bottom right, $color-secondary-light, $color-secondary-dark);
+
+  &-col {
+    width: 20vw;
+    display: flex;
+
+    @include flex-center;
+
+    @include respond(tab-port) {
+      width: 50vw;
+    }
+
+    &--mobile {
+
+      @include respond(tab-port) {
+        width: 0;
+      }
+    }
+
+    &--half {
+      width: 10vw;
+
+      @include respond(tab-port) {
+        width: 0;
+      }
+    }
+  }
+
+  &__sign {
+    width: 100%;
+
+    @include respond(tab-port) {
+      align-self: flex-start;
+      margin-top: 12rem;
+      width: 20rem;
+    }
+  }
+
+  &__phone {
+    height: 80vh;
+    align-self: flex-end;
+    
+    @include respond(tab-port) {
+      height: 70vh;
+    }
+  
+  }
+}

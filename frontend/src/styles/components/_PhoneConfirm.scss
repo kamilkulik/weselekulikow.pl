@@ -1,0 +1,29 @@
+.phone-confirm {
+  text-align: center;
+
+  &:not(:last-child) {
+
+    @include respond(phone) {
+      margin-bottom: 7rem;
+    }
+
+    @include respond(phone-land) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__tel,
+  &__tel:link,
+  &__tel:visited {
+    font-size: 4rem;
+    color: $color-secondary-dark;
+    font-family: inherit;
+    transition: all .4s;
+
+    &:hover {
+      color: $color-secondary-light;
+      transform: translateY(-.5rem);
+      text-shadow: 0 1rem 2rem rgba($color-black, .3)
+    }
+  }
+}

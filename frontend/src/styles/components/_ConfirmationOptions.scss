@@ -1,0 +1,50 @@
+.conf-opts {
+
+  margin-top: 2rem;
+  display: flex;
+
+  @include respond(phone) {
+    flex-direction: column;
+  }
+
+  @include respond(phone-land) {
+    flex-direction: row;
+  }
+
+  &__ico {
+    width: 10vw;
+    cursor: pointer;
+
+    @include respond(phone) {
+      width: 20vw;
+    }
+
+    &:not(:last-child) {
+      margin-right: 5rem;
+
+      @include respond(phone) {
+        margin: 0;
+      }
+      @include respond(phone-land) {
+        margin-right: 2rem;
+      }
+    }
+
+    & path {
+      fill: $color-secondary-dark;
+      //transition: all .4s;
+
+      // &::after {
+      //   content: "";
+      //   width: 5rem; 
+      //   height: 5rem;
+      //   display: block;
+      // }
+
+      // &:hover {
+      //   fill: $color-secondary-light;
+      //   transform: translateY(-.5rem);
+      // }
+    }
+  }
+}

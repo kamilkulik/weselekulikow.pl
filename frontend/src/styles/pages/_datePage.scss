@@ -1,0 +1,70 @@
+.datePage {
+  background-image: linear-gradient(to right, $color-primary, $color-primary);
+  position: relative;
+}
+
+.date-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include center-hor-ver;
+
+  &__date {
+    font-size: 13rem;
+    margin: 1rem 0 1rem 0;
+
+    background-image: linear-gradient(to bottom right, $color-secondary-light, $color-secondary-dark);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    @include respond(tab-port-small) {
+      font-size: 12rem;
+    }
+
+    @include respond(phone) {
+      font-size: 8rem;
+      margin: 1rem 0 1rem 0;
+    }
+
+    @include respond(small-phone) {
+      font-size: 6rem;
+      margin: 0;
+    }
+
+    @include respond(phone-land) {
+      font-size: 8rem;
+    }
+  }
+}
+
+.countdown-wrapper {
+  align-self: stretch;
+  
+  display: flex;
+  justify-content: space-evenly;
+
+  @include respond(tab-land) {
+    //justify-content: space-between;
+  }
+}
+
+.countdown-item {
+  font-size: 4rem;
+  line-height: 3rem;
+  color: $color-secondary-dark;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  & span {
+    font-size: 2rem;
+  }
+
+  @include respond(small-phone) {
+    font-size: 2.5rem;
+  }
+
+}

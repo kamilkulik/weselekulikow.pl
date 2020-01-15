@@ -1,0 +1,193 @@
+.navigation {
+
+  // the idea is to use the checkbox hack (hiding original checkbox and rely on clicking it's label; we need a checkbox to click and unclick the menu button, which will show and hide the meny) and create two circular elements:
+  // - one on top which is white and contains the three lines that will expand on hover
+  // - second below the first one, which will have the background color and circular gradient that will expand from underneath white button
+  // the navigation itself uses solid color gradient rotated at an angle, changing size within inline-block to create the highlight effect upon hover
+  // Cubic-bezier function is used to define path of animation (transition transform for background and transition all for nav)
+  // three lines are created by using a span element with 2px height and dark background color and before and after pseudo classes
+  // when the button is checked, span changes it's background to transparent (for some reason after and before don't) and before, after get rotated 135 deg to create a cross
+
+  &__checkbox {
+      display: none;
+  }
+
+  &__button {
+      background-color: white;
+      border-radius: 50%;
+      height: 7rem;
+      width: 7rem;
+      position: fixed;
+      top: 6rem;
+      right: 6rem;
+      z-index: 2000;
+      box-shadow: 0 1rem 3rem rgba($color-black, .2s);
+      text-align: center;
+      cursor: pointer;
+
+      @include respond(tab-port) {
+          top: 4rem;
+          right: 4rem;
+      }
+
+      @include respond(phone) {
+          top: 3rem;
+          right: 3rem;
+      }
+  }
+
+  &__background {
+      height: 6rem;
+      width: 6rem;
+      border-radius: 50%; 
+      position: fixed;
+      top: 6.5rem;
+      right: 6.5rem;
+      background-image: radial-gradient($color-primary, $color-primary-dark);
+      z-index: 999;
+      transition: transform .6s cubic-bezier(0.86, 0, 0.07, 1); //function sourced from: https://easings.net/en#easeInOutQuint. Bezier function defines how animation happens over time
+
+      @include respond(tab-port) {
+          top: 4.5rem;
+          right: 4.5rem;
+      }
+
+      @include respond(phone) {
+          top: 3.5rem;
+          right: 3.5rem;
+      }
+  }
+
+  &__nav {
+      height: 100vh;
+
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 1500;
+
+      opacity: 0;
+      width: 0;
+
+      transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  &__list {
+      @include center-hor-ver;
+      list-style: none;
+      text-align: center;
+      line-height: 1;
+      width: 70vw;
+
+      @include respond(phone) {
+          width: 80vw;
+          margin: 0;
+          padding: 0;
+      }
+  }
+
+  &__item {
+      margin: 1rem;
+  }
+
+  &__link {
+
+      &:link,
+      &:visited {
+          display: inline-block;
+          font-size: 5rem;
+          font-weight: 300;
+          padding: 1rem 2rem;
+          color: $color-secondary-light;
+          text-decoration: none;
+          text-transform: uppercase;
+          background-image: linear-gradient(120deg, transparent 0%, 50%, transparent 50%, $color-secondary-light 50%);
+          background-size: 230%; //220% to cover the entire length of the line
+          transition: all .4s;
+
+          @include respond(phone) {
+              font-size: 4rem;
+          }
+
+          @include respond(phone-land) {
+            font-size: 4rem;
+        }
+
+          & span {
+              margin-right: 1.5rem;
+              display: inline-block;
+          }
+      }
+
+      &:hover,
+      &:active {
+          background-position: 100%; // 100% centers background which was previously moved by background-size
+          color: $color-primary;
+          transform: translateX(1rem);
+      }
+  }
+
+  //FUNCTIONALITY
+
+  &__checkbox:checked ~ &__background {
+      transform: scale(80);
+  }
+
+  &__checkbox:checked ~ &__nav {
+      opacity: 1;
+      width: 100%;
+  }
+
+  // ICON
+
+  &__icon {
+
+      position: relative;
+      margin-top: 3.5rem;
+
+      &,
+      &::before,
+      &::after {
+          width: 3rem;
+          height: 2px;
+          background-color: $color-grey-dark-3;
+          display: inline-block;
+
+      }
+
+      &::before,
+      &::after {
+          content: ""; // for pseudo elements to appear on the page they need to have their content defined
+          position: absolute;
+          left: 0;
+          transition: all .2s;
+      }
+
+      &::before { top: -.8rem; }
+      &::after { top: .8rem; }
+
+      
+  }
+
+  &__button:hover &__icon::before {
+      top: -1rem;
+  }
+
+  &__button:hover &__icon::after {
+      top: 1rem;
+  }
+
+  &__checkbox:checked + &__button &__icon {
+      background-color: transparent;
+  }
+
+  &__checkbox:checked + &__button &__icon::before {
+      transform: rotate(135deg);
+      top: 0;
+  }
+
+  &__checkbox:checked + &__button &__icon::after {
+      transform: rotate(-135deg);
+      top: 0;
+  }
+}

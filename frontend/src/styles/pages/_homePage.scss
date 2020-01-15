@@ -1,0 +1,51 @@
+  .section-header {
+    background-image: linear-gradient(
+      to bottom, 
+      rgba($color-secondary-light, 0.3), 
+      rgba($color-secondary-dark, 0.00)),
+      url('../../assets/header_comp.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+    width: 100vw;
+  }
+
+  .section-date {
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .section-accept {
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .section-church {
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .section-reception {
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .section-hotel {
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .section-map {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    background-image: linear-gradient(to bottom, $color-primary, $color-primary-dark);
+
+    @include flex-center;
+  }
+
+  .section-contact {
+    height: 100vh;
+  }
