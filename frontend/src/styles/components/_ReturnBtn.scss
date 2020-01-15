@@ -5,12 +5,15 @@
     line-height: 1rem;
     align-items: center;
     z-index: 999;
-    
 
     &--phone {
       
       @include respond(tab-port) {
         margin-bottom: 5rem;
+      }
+
+      @include respond(phone-land) {
+        margin-bottom: 1rem;
       }
     }
   }

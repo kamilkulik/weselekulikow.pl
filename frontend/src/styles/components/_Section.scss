@@ -18,6 +18,7 @@
 
 .section-wrapper {
   display: flex;
+  justify-content: space-between;
   width: 70vw;
   height: 70vh;
   color: $color-primary;
@@ -28,6 +29,8 @@
 
   @include respond(tab-port) {
     flex-direction: column;
+    width: 90vw;
+    height: 90vh;
   }
 
   @include respond(phone) {
@@ -56,7 +59,9 @@
       width: 100%;
       margin: 2rem 0 0 0;
       font-size: 2rem;
-      flex-direction: row;
+      flex-direction: column;
+      justify-content: space-between;
+      flex-grow: 1;
     }
 
     @include respond(phone) {
@@ -75,6 +80,22 @@
     &__paragraph {
       margin: 3rem 0 0 0;
       width: 80%;
+
+      @include respond(tab-port) {
+        padding: 0 10rem;
+        width: 100%;
+      }
+
+      @include respond(phone) {
+        padding: 0;
+        width: 100%;
+      }
+
+      @include respond(phone-land) {
+        padding: 0 2rem;
+        width: 100%;
+        margin: 0;
+      }
     }
 
     &__bottom {
@@ -137,12 +158,11 @@
     @include respond(tab-port) {
       width: 35vw;
     }
-
+    
     @include respond(phone) {
       width: 40vw;
       margin: 0;
     }
-
     @include respond(phone-land) {
       width: 25vw;
       margin: 0;
@@ -155,12 +175,12 @@
         width: 50vw;
         margin-bottom: 0rem;
       }
+      
       @include respond(phone) {
         width: 60vw;
       }
-
       @include respond(phone-land) {
-        width: 100%;
+        width: 80%;
       }
     }
 

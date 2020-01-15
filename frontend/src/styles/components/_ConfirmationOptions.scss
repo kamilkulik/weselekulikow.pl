@@ -7,6 +7,10 @@
     flex-direction: column;
   }
 
+  @include respond(phone-land) {
+    flex-direction: row;
+  }
+
   &__ico {
     width: 10vw;
     cursor: pointer;
@@ -20,6 +24,9 @@
 
       @include respond(phone) {
         margin: 0;
+      }
+      @include respond(phone-land) {
+        margin-right: 2rem;
       }
     }
 

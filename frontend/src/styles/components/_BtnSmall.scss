@@ -21,6 +21,15 @@
     white-space:normal;
   }
 
+  @include respond(small-phone) {
+    font-size: 2rem;
+  }
+
+  @include respond(phone-land) {
+    font-size: 2rem;
+    width: 40vw;
+  }
+
   &:hover {
     
     transform: translateY(-.5rem) translateX(-50%);

@@ -6,6 +6,10 @@
     @include respond(phone) {
       margin-bottom: 7rem;
     }
+
+    @include respond(phone-land) {
+      margin-bottom: 2rem;
+    }
   }
 
   &__tel,

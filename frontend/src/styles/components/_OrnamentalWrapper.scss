@@ -17,6 +17,15 @@
     height: 80vh;
     width: 95vw;
   }
+
+  @include respond(phone-land) {
+    background-image: url('../../assets/Artboard_11.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 90vh;
+    width: 70vw;
+  }
   
   &--tab-port {
 
@@ -37,14 +46,6 @@
 
   &--mobile {
     
-    @include respond(phone-land) {
-      background-image: url('../../assets/Artboard_11.png');
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-      height: 97vh;
-      width: 70vw;
-    }
     @include respond(phone) {
       background-image: url('../../assets/Artboard_11_mobile.png');
       background-size: contain;
@@ -53,7 +54,15 @@
       height: 80vh;
       width: 95vw;
     }
-
+    
+    @include respond(phone-land) {
+      background-image: url('../../assets/Artboard_11.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 97vh;
+      width: 70vw;
+    }
   }
 
 
