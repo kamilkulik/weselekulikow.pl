@@ -24,7 +24,7 @@ export default class ConfirmationForm extends React.Component {
   };
   handleSubmit(e) {
     e.preventDefault();
-    axios.post('http://localhost:3030/email', {
+    axios.post('https://weselekulikow.herokuapp.com/email', {
       isGoing: this.state.isGoing,
       name: this.state.name,
       numberOfGuests: this.state.numberOfGuests
