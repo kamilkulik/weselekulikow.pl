@@ -1,6 +1,9 @@
 {
   "name": "backend",
   "version": "0.0.0",
+  "engines": {
+    "node": "10.x" 
+  },
   "private": true,
   "scripts": {
     "start": "env-cmd -f ./config/ENV_VARS.env node ./bin/www"
