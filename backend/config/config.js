@@ -8,5 +8,9 @@ module.exports = {
   MAILER_FROM_EMAIL: process.env.MAILER_FROM_EMAIL,
   MAILER_FROM_NAME: process.env.MAILER_FROM_NAME,
   MAILER_TO_EMAIL: process.env.MAILER_TO_EMAIL,
-  PORT: process.env.PORT
+  PORT: process.env.PORT,
+  MONGO_DB_NAME: process.env.MONGO_DB_NAME,
+  MONGO_URI: process.env.MONGO_URI,
+  MONGO_USERNAME: process.env.MONGO_USERNAME,
+  MONGO_USERNAME_PASS: process.env.MONGO_USERNAME_PASS
 }
