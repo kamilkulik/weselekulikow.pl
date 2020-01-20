@@ -13,6 +13,7 @@
   }  
   @include respond(phone) {
     width: 80vw;
+    font-size: 2rem;
   }
   
   @include respond(phone-land) {

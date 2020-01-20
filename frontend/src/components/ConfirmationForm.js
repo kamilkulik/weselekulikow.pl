@@ -12,7 +12,8 @@ export default class ConfirmationForm extends React.Component {
       isGoing: 'tak',
       name: '',
       numberOfGuests: 2,
-      formSent: false
+      formSent: false,
+      err: ''
     }
   };
   handleChange(e) {
@@ -22,17 +23,23 @@ export default class ConfirmationForm extends React.Component {
     value = name === 'numberOfGuests' ? parseInt(value) : value;
     this.setState({ [name]: value }); // computed property name used here
   };
-  handleSubmit(e) {
+  handleSubmit = async(e) => {
     e.preventDefault();
-    axios.post('https://weselekulikow.herokuapp.com/email', {
-      isGoing: this.state.isGoing,
-      name: this.state.name,
-      numberOfGuests: this.state.numberOfGuests
-    })
-    .then(() => {
+    try {
+      await axios.post('https://weselekulikow.herokuapp.com/email', {
+        isGoing: this.state.isGoing,
+        name: this.state.name,
+        numberOfGuests: this.state.numberOfGuests
+      })
+
       this.setState({ formSent: true });
-    })
-    .catch(err => (console.log(err)));
+
+    } catch(err) {
+      const errCode = err.response.data.code;
+      errCode === 11000 ? this.setState({ err: 'Jesteś juz zarejestrowany/a na wydarzenie' }) : this.setState({ err: 'Nieznany błąd' })
+    }
+    
+    
   };
   render() {
     return (
@@ -75,6 +82,9 @@ export default class ConfirmationForm extends React.Component {
         {this.state.isGoing === "tak" && (
           <CSSTransition classNames="formTran" timeout={300}>
           <div className="form__fields--wrapper">
+          <div className="form__fields--line" style={{ color: 'red'}}>
+            {this.state.err && (<div>{this.state.err}</div>)}
+          </div>
           <div className="form__fields--line">
             <label className="form__label">Imię i nazwisko:</label>
             <input className="form__input" type="text" onChange={this.handleChange} name="name" value={this.state.name} required />
