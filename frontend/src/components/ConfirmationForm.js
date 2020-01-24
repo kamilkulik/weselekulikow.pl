@@ -13,7 +13,8 @@ export default class ConfirmationForm extends React.Component {
       name: '',
       numberOfGuests: 2,
       formSent: false,
-      err: ''
+      err: '',
+      transition: true
     }
   };
   handleChange(e) {
@@ -38,19 +39,16 @@ export default class ConfirmationForm extends React.Component {
       const errCode = err.response.data.code;
       errCode === 11000 ? this.setState({ err: 'Jesteś juz zarejestrowany/a na wydarzenie' }) : this.setState({ err: 'Nieznany błąd' })
     }
-    
-    
   };
   render() {
     return (
       <>
-      <TransitionGroup component={null}>
       {!this.state.formSent ? (
         <form onSubmit={this.handleSubmit} className="form">
         <p className="form__p">Potwierdzasz przybycie?</p>
         <div className="form__group">
         <div className="form__radio-group">
-          <input 
+          <input
             type="radio"
             name="isGoing"
             value="tak"
@@ -64,7 +62,7 @@ export default class ConfirmationForm extends React.Component {
           </label>
         </div>
         <div className="form__radio-group">
-          <input 
+          <input
             type="radio"
             name="isGoing"
             value="nie"
@@ -78,9 +76,16 @@ export default class ConfirmationForm extends React.Component {
           </label>
         </div>
         </div>
-      <TransitionGroup component={null}>
+        <TransitionGroup>
         {this.state.isGoing === "tak" && (
-          <CSSTransition classNames="formTran" timeout={300}>
+          <CSSTransition 
+            classNames="formTran" 
+            timeout={{
+              enter: 500,
+              exit: 0
+            }}
+            exit={false}
+          >
           <div className="form__fields--wrapper">
           <div className="form__fields--line" style={{ color: 'red'}}>
             {this.state.err && (<div>{this.state.err}</div>)}
@@ -103,28 +108,33 @@ export default class ConfirmationForm extends React.Component {
         </div>
         </CSSTransition>
         )}
-        </TransitionGroup>
-        <TransitionGroup component={null}>
         {this.state.isGoing === "nie" && (
-          <CSSTransition classNames="formTran" timeout={300}>
-          <div className="form__fields--wrapper">
-          <div className="form__fields--line">
-            <label className="form__label">Imię i nazwisko:</label>
-            <input className="form__input" type="text" onChange={this.handleChange} name="name" value={this.state.name} required />
-          </div>
-          </div>
-          </CSSTransition>
-        )}
-        </TransitionGroup>
-        <input 
-        type="submit" 
-        value={this.state.isGoing === "tak" ? "Potwierdź przybycie" : "Potwierdź, że Cię nie będzie :("}
-        className="btn-small btn-small--animated"
-        />
+          <CSSTransition 
+            classNames="formTran" 
+            timeout={{
+              enter: 500,
+              exit: 0
+            }}
+            exit={false}
+          >
+            <div className="form__fields--wrapper">
+              <div className="form__fields--line">
+                <label className="form__label">Imię i nazwisko:</label>
+                <input className="form__input" type="text" onChange={this.handleChange} name="name" value={this.state.name} required />
+              </div>
+            </div>
+            </CSSTransition>
+            )}
+            </TransitionGroup>
+            <input 
+            type="submit" 
+            value={this.state.isGoing === "tak" ? "Potwierdź przybycie" : "Potwierdź, że Cię nie będzie :("}
+            className="btn-small btn-small--animated"
+            />
     </form>
       ) : (
         this.state.formSent && (
-          <CSSTransition classNames="formTran" timeout={300}>
+          <CSSTransition in={true} classNames="formTran" timeout={300}>
           <div className="form__fields--wrapper">
             <ConfirmationThanks 
               message={this.state.isGoing === "tak" ? "Dziękujemy za przyjęcie zaproszenia!" : "Przykro nam, że Cię nie będzie. Dziękujemy, że dałeś/aś nam znać."}
@@ -134,7 +144,6 @@ export default class ConfirmationForm extends React.Component {
           </CSSTransition>
         )
       )}
-      </TransitionGroup>
       </>
     )
   };

@@ -265,9 +265,9 @@
   transition: opacity 500ms ease-in;
 }
 .formTran-exit {
-  opacity: 1;
+  opacity: 0;
 }
 .formTran-exit-active {
-  opacity: 0;
+  opacity: 1;
   transition: opacity 500ms ease-in;
 }
