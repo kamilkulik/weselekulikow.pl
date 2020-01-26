@@ -63,6 +63,10 @@
   &-right {
     animation: 1s ease-out 0s float-in-from-right;
   }
+
+  &-bottom {
+    //animation: .5s ease-out 0s float-in-from-bottom;
+  }
 }
 
 @keyframes float-in-from-left {
@@ -83,6 +87,17 @@
   }
   100% {
     transform: translateX(0rem);
+    opacity: 1;
+  }
+}
+
+@keyframes float-in-from-bottom {
+  0% {
+    transform: translateY(50rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0rem);
     opacity: 1;
   }
 }

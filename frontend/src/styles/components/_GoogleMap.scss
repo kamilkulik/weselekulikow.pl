@@ -1,0 +1,40 @@
+.google-map {
+
+  &__label {
+    color: black;
+    white-space: nowrap;
+
+    & > h2 {
+      text-align: center;
+      margin: 0 0 1rem 0;
+    }
+
+    & > h4 {
+      margin: 0 0 1rem 0;
+    }
+
+    & > a {
+      margin-top: 2rem;
+    }
+  }
+
+  &__container {
+    width: 90vw;
+    height: 90vh;
+  }
+}
+
+.infoBox {
+  /* Style the bubble. */
+  background-color: white;
+  padding: 1rem;
+  border-radius: 5px;
+  font-family: sans-serif;
+  overflow-y: auto;
+  max-height: 100px;
+  max-width: 250px;
+  box-shadow: 0px 2px 10px 1px rgba(0,0,0,0.5);
+  opacity: 0.9;
+
+
+}

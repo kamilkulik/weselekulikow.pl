@@ -1,27 +1,47 @@
 import React from 'react';
-import { withScriptjs, withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
+import { Marker, InfoBox } from '@react-google-maps/api';
 
-const MyGoogleMap = withScriptjs(withGoogleMap((props) => (
-  <GoogleMap
-    defaultZoom={13}
-    defaultCenter={{ lat: 51.107883, lng: 17.038538 }}
-    >
-    {props.isMarkerShown && 
-      <Marker
-      position={{ lat: 51.1063753, lng: 17.0278022 }}
-      label="Kościół pod wezwaniem św. Stanisława"
-    />}
-    {props.isMarkerShown && 
-      <Marker 
-      position={{ lat: 51.092872, lng: 17.1042674 }}
-      label="Zajazd pod kasztanem" 
-      />}
-    {props.isMarkerShown && 
-      <Marker 
-      position={{ lat: 51.1117472, lng: 17.0093802 }}
-      label="CITI Hotel's Wrocław"
-      />}
-  </GoogleMap>
-)));
- 
-export default MyGoogleMap;
+const infoBoxOptions = {
+  closeBoxURL: '',
+  
+}
+
+export default class MyGoogleMap extends React.Component {
+  constructor(props) {
+    super(props)
+    this.markerClick = this.markerClick.bind(this)
+    this.closeClick = this.closeClick.bind(this)
+    this.state = {
+      show: true,
+    }
+  }
+  markerClick(e) {
+    this.setState({ show: !this.state.show });
+  }
+  closeClick(e) {
+    this.setState({ show: false })
+  }
+  render() {
+    return (
+      <div>
+        <Marker
+          position={this.props.markerPosition}
+          id={this.props.id}
+          onClick={this.markerClick}
+          />
+        {this.state.show && <InfoBox
+          position={this.props.infoBoxPosition}
+          onCloseClick={this.closeClick}
+          options={infoBoxOptions}
+        >
+          <div className="google-map__label">
+            <h2>{this.props.place}</h2>
+            <h4>{this.props.title}</h4>
+            <p>{this.props.address}</p>
+            <a href={this.props.url}>Pokaż w Google Maps</a>
+          </div>
+        </InfoBox>}
+      </div>
+    )
+  }
+}

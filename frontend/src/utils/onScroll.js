@@ -13,6 +13,9 @@ function scrollHandle(elem, anim) {
   } else if (isInViewPort(elem) && anim === 'right') {
     elem.classList.add('float-in-right');
     show.remove('no-opacity');
+  } else if (isInViewPort(elem) && anim === 'bottom') {
+    elem.classList.add('float-in-bottom');
+    show.remove('no-opacity');
   }
 }
 
