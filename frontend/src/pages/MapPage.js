@@ -3,6 +3,22 @@ import { GoogleMap, LoadScript } from '@react-google-maps/api';
 import MyGoogleMap from '../components/GoogleMap';
 import mapLocations from '../utils/MapLocations';
 
+const center = {
+  lat: 51.105, lng: 17.068
+}
+
+const options = {
+  draggable: true
+}
+
+const zoom = () => {
+  const width = window.innerWidth;
+  const height = window.innerHeight;
+  let zoom;
+  width > 800 && height > 400 ? zoom = 12 : zoom = 11;
+  return zoom;
+}
+
 class MapPage extends React.Component {
   render() {
     return (
@@ -17,9 +33,11 @@ class MapPage extends React.Component {
               >
               <GoogleMap
                 id='WeselnaMap'
-                center={{ lat: 51.1055089, lng: 17.0685462 }}
-                zoom={13}
+                center={center}
+                zoom={zoom()}
                 mapContainerClassName="google-map__container"
+                mapContainerStyle={{ height: '100%' }}
+                options={options}
               >
                 {mapLocations.map(location => {
                   return (
