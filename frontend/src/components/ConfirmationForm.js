@@ -2,27 +2,18 @@ import React from 'react';
 import axios from 'axios';
 import ConfirmationThanks from './ConfirmationThanks';
 import { TransitionGroup, CSSTransition } from "react-transition-group";
-import setViewPort from '../utils/setViewPort';
+//import setViewPort from '../utils/setViewPort';
 
 export default class ConfirmationForm extends React.Component {
-  constructor(props) {
-    super(props)
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleChange = this.handleChange.bind(this);
-    this.setViewport = this.setViewport.bind(this);
-    this.state = {
-      isGoing: 'tak',
-      name: '',
-      numberOfGuests: 2,
-      formSent: false,
-      err: '',
-      transition: true
-    }
-  };
-  setViewport() {
-    setViewPort();
+    state = {
+    isGoing: 'tak',
+    name: '',
+    numberOfGuests: 2,
+    formSent: false,
+    err: '',
+    transition: true
   }
-  handleChange(e) {
+  handleChange = (e) => {
     const target = e.target;
     const name = target.name;
     let value = target.value;
@@ -100,8 +91,8 @@ export default class ConfirmationForm extends React.Component {
             <input 
               className="form__input" 
               type="text" 
-              onChange={() => this.handleChange}
-              onClick={() => this.setViewport()}
+              onChange={this.handleChange}
+              //onClick={setViewPort}
               name="name" 
               value={this.state.name} 
               required />
