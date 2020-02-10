@@ -1,17 +1,8 @@
 const express = require('express');
-const router = express.Router();
-const mailer = require('../services/mailer');
-const Guest = require('../models/guest');
+const mailerController = require('../controllers/mailer');
 
-router.post('/', async function(req, res, next) {
-    try {
-        const newGuest = await Guest.create( req.body );
-        mailer(req.body);
-        res.status(200).send({ newGuest });
-    } catch(err) {
-        res.status(400).send(err);
-    }
-    
-});
+const router = express.Router();
+
+router.post('/email', mailerController.register);
 
 module.exports = router;

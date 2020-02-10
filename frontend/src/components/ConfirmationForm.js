@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import ConfirmationThanks from './ConfirmationThanks';
 import { TransitionGroup, CSSTransition } from "react-transition-group";
-//import setViewPort from '../utils/setViewPort';
+import setViewPort from '../utils/setViewPort';
 
 export default class ConfirmationForm extends React.Component {
     state = {
@@ -92,7 +92,7 @@ export default class ConfirmationForm extends React.Component {
               className="form__input" 
               type="text" 
               onChange={this.handleChange}
-              //onClick={setViewPort}
+              onClick={setViewPort}
               name="name" 
               value={this.state.name} 
               required />
@@ -121,6 +121,9 @@ export default class ConfirmationForm extends React.Component {
             exit={false}
           >
             <div className="form__fields--wrapper">
+            <div className="form__fields--line" style={{ color: 'red'}}>
+              {this.state.err && (<div>{this.state.err}</div>)}
+            </div>
               <div className="form__fields--line">
                 <label className="form__label">Imię i nazwisko:</label>
                 <input className="form__input" type="text" onChange={this.handleChange} name="name" value={this.state.name} required />

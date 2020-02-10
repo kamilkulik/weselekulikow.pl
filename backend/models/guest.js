@@ -19,6 +19,16 @@ const guestSchema = new mongoose.Schema({
   }
 });
 
+guestSchema.pre('save', function (next) {
+  const guest = this;
+  const name = guest.name
+    .toLowerCase()
+    .trimEnd()
+    .trimStart()
+  guest.name = name;
+  next();
+});
+
 const Guest = mongoose.model('Guest', guestSchema);
 
 module.exports = Guest;

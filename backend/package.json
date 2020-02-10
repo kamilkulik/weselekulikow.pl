@@ -6,7 +6,7 @@
   },
   "private": true,
   "scripts": {
-    "start": "env-cmd -f ./config/ENV_VARS.env node ./bin/www"
+    "start": "env-cmd -f ./config/ENV_VARS.env nodemon ./bin/www"
   },
   "dependencies": {
     "cors": "^2.8.5",
@@ -18,7 +18,8 @@
     "node-mailjet": "^3.3.1"
   },
   "devDependencies": {
-    "env-cmd": "^10.0.1"
+    "env-cmd": "^10.0.1",
+    "nodemon": "^2.0.2"
   },
   "buildpacks": [
     {
