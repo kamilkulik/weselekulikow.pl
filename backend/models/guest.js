@@ -19,7 +19,7 @@ const guestSchema = new mongoose.Schema({
   }
 });
 
-guestSchema.pre('save', function (next) {
+guestSchema.pre('save', function(next) {
   const guest = this;
   const name = guest.name
     .toLowerCase()

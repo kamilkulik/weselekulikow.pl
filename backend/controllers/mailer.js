@@ -1,5 +1,3 @@
-const express = require('express');
-// const router = express.Router();
 const mailer = require('../services/mailer');
 const Guest = require('../models/guest');
 

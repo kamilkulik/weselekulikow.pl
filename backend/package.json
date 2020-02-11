@@ -6,7 +6,8 @@
   },
   "private": true,
   "scripts": {
-    "start": "env-cmd -f ./config/ENV_VARS.env nodemon ./bin/www"
+    "dev": "env-cmd -f ./config/ENV_VARS.env nodemon ./bin/www",
+    "start": "node ./bin/www"
   },
   "dependencies": {
     "cors": "^2.8.5",
