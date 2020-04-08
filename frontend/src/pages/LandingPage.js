@@ -4,7 +4,7 @@ import ButtonBig from '../components/ButtonBig';
 
 
 function LandingPage() {
-  const message = 'Wejdź';
+  const message = 'Zapraszamy';
   return (
     <div>
       <section className="landingPage">

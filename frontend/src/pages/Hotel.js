@@ -7,7 +7,7 @@ const Hotel = () => (
   <div>
     <Section 
     id={"hotel"}
-    description={'Niepozorny *** hotel na starym mieście. Noclegi przewidziane dla wszystkich gości spoza Wrocławia.'}
+    description={'Goście przyjezdni odpoczną w komfortowym  *** hotelu na starym mieście.'}
     sectionSign={HotelSign}
     address={'Trzemeska 10'}
     sectionImg={HotelImage}

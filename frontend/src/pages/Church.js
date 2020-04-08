@@ -7,7 +7,7 @@ const Church = () => (
   <div>
     <Section 
       id={"church"}
-      description={'Piękny barokowy kościół z XIV w. usytuowany w ścisłym centrum Wrocławia.'}
+      description={'Powiemy sobie “tak” w pięknym barokowym kościele z XIV w. usytuowany w ścisłym centrum Wrocławia.'}
       sectionSign={churchSign}
       address={'ul. Plac Wolności 3'}
       sectionImg={churchImg}

@@ -95,6 +95,7 @@
         padding: 0 2rem;
         width: 100%;
         margin: 0;
+        font-size: 1.6rem;
       }
     }
 
@@ -109,6 +110,14 @@
         
         @include respond(phone) {
           font-size: 2rem;
+        }
+
+        @include respond(tab-port) {
+
+        }
+      
+        @include respond(phone-land) {
+
         }
 
       }
@@ -153,7 +162,7 @@
 
   &--sign {
     width: 20vw;
-    margin: 5rem 0 3rem 0;
+    margin: 2rem 0 1rem 0;
 
     @include respond(tab-port) {
       width: 35vw;
@@ -169,18 +178,19 @@
     }
 
     &__podKasztanami {
-      width: 25vw;
+      width: 20vw;
 
       @include respond(tab-port) {
-        width: 50vw;
-        margin-bottom: 0rem;
+        width: 35vw;
       }
       
       @include respond(phone) {
-        width: 60vw;
+        width: 40vw;
+        margin: 0;
       }
       @include respond(phone-land) {
-        width: 80%;
+        width: 25vw;
+        margin: 0;
       }
     }
 
