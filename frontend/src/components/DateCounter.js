@@ -10,7 +10,7 @@ export default class DateCounter extends React.Component {
   };
   componentDidMount() {
     this.interval = setInterval(() => {
-      const date = moment('29 05 2021, 4:00 pm', 'MM DD YYYY, h:mm p');
+      const date = moment('29 05 2021, 4:00 pm', 'DD MM YYYY, h:mm p');
       const now = moment();
       const countdown = moment(date - now);
       const days = countdown.format('DDD');
