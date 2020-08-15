@@ -15,12 +15,19 @@ const sendEmail = ({ isGoing, name, numberOfGuests }) => {
         },
         "To": [
           {
-            "Email": config.MAILER_TO_EMAIL,
+            "Email": config.MAILER_TO_EMAIL2,
+          },
+          {
+            "Email": config.MAILER_TO_EMAIL3,
           }
         ],
-        "Subject": `${name} potwierdza przybycie na wesele`,
+        "Subject": `${isGoing === 'nie' 
+          ? `${name} nie przyjdzie na wesele` 
+          : `${name} potwierdza przybycie na wesele` }`,
         "TextPart": "My first Mailjet email",
-        "HTMLPart": `Imię i nazwisko: ${name}<br>Idzie: ${isGoing}<br>Ilość osób: ${numberOfGuests}`,
+        "HTMLPart": `Imię i nazwisko: ${name}
+          <br>Idzie: ${isGoing}
+          <br>${isGoing === 'nie' ? '' : `Ilość osób: ${numberOfGuests}`}`,
         "CustomID": "AppGettingStartedTest"
       }
     ]
