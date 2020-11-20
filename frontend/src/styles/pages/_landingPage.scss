@@ -1,27 +1,36 @@
-.landingPage { 
-    background: url(../../assets/Landing_comp.jpg) no-repeat center center; 
+.landingPage {
+  background: url(../../assets/Landing_comp.jpg) no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+  background-position: top;
+
+  &--text-box {
+    position: absolute;
+    top: 93%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+
+    @include respond(tab-port) {
+      top: 95%;
+    }
+
+    @include respond(phone) {
+      top: 80%;
+    }
+  }
+
+  @include respond(tab-port) {
+    background: url(../../assets/mobile_comp.jpg) no-repeat;
+    background-position: top;
+    background-size: cover;
+  }
+
+  @include respond(phone-land) {
+    background: url(../../assets/Landing_comp.jpg) no-repeat center center;
     background-size: cover;
     height: 100vh;
     background-position: top;
-
-    &--text-box {
-      position: absolute;
-      top: 93%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-    };
-
-    @include respond(tab-port) {
-      background: url(../../assets/mobile_comp.jpg) no-repeat;
-      background-position: top;
-      background-size: cover;
-    }
-
-    @include respond(phone-land) {
-      background: url(../../assets/Landing_comp.jpg) no-repeat center center; 
-      background-size: cover;
-      height: 100vh;
-      background-position: top;
-    }
-};
+  }
+}

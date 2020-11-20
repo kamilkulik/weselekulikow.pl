@@ -1,56 +1,65 @@
-.btn {		
-	position: relative;	
-	padding: .4rem 4.2rem;
-	padding-right: 3.1rem;
-	font-size: 6rem;
-	color: $color-secondary-light;
-	letter-spacing: .1rem;
-	text-transform: uppercase;
-	cursor: pointer;
-	user-select: none;
-	transition: all 600ms cubic-bezier(0.77, 0, 0.175, 1);	
+.btn {
+  position: relative;
+  padding: 0.4rem 4.2rem;
+  padding-right: 3.1rem;
+  font-size: 6rem;
+  color: $color-secondary-light;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  user-select: none;
+  transition: all 600ms cubic-bezier(0.77, 0, 0.175, 1);
+
+  @include respond(tab-port) {
+    font-size: 6rem;
+  }
+
+  @include respond(small-phone) {
+    font-size: 5rem;
+  }
 }
 
-.btn:before, .btn:after {
-	content: '';
-	position: absolute;	
-	transition: inherit;
-	z-index: -1;
+.btn:before,
+.btn:after {
+  content: '';
+  position: absolute;
+  transition: inherit;
+  z-index: -1;
 }
 
 .btn:hover {
-	color: $color-primary;
-	transition-delay: .6s;
+  color: $color-primary;
+  transition-delay: 0.6s;
 }
 
 .btn:hover:before {
-	transition-delay: 0s;
+  transition-delay: 0s;
 }
 
 .btn:hover:after {
-	background: $color-secondary-light;
-	transition-delay: .4s;
+  background: $color-secondary-light;
+  transition-delay: 0.4s;
 }
 
-.from-left:before, 
+.from-left:before,
 .from-left:after {
-	top: 0;
-	width: 0;
-	height: 100%;
+  top: 0;
+  width: 0;
+  height: 100%;
 }
 
 .from-left:before {
-	right: 0;
-	border: 4px solid $color-secondary-light;
-	border-left: 0;
-	border-right: 0;	
+  right: 0;
+  border: 4px solid $color-secondary-light;
+  border-left: 0;
+  border-right: 0;
 }
 
 .from-left:after {
-	left: 0;
+  left: 0;
 }
 
 .from-left:hover:before,
 .from-left:hover:after {
-	width: 100%;
+  width: 100%;
 }
