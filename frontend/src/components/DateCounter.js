@@ -1,5 +1,5 @@
-import React from 'react';
-import moment from 'moment';
+import React from 'react'
+import moment from 'moment'
 
 export default class DateCounter extends React.Component {
   state = {
@@ -7,27 +7,27 @@ export default class DateCounter extends React.Component {
     hours: undefined,
     minutes: undefined,
     seconds: undefined,
-  };
+  }
   componentDidMount() {
     this.interval = setInterval(() => {
-      const date = moment('29 05 2021, 4:00 pm', 'DD MM YYYY, h:mm p');
-      const now = moment();
-      const countdown = moment(date - now);
-      const days = countdown.format('DDD');
-      const hours = countdown.format('HH');
-      const minutes = countdown.format('mm');
-      const seconds = countdown.format('ss');
+      const date = moment('24 07 2021, 4:00 pm', 'DD MM YYYY, h:mm p')
+      const now = moment()
+      const countdown = moment(date - now)
+      const days = countdown.format('DDD')
+      const hours = countdown.format('HH')
+      const minutes = countdown.format('mm')
+      const seconds = countdown.format('ss')
 
-      this.setState({ days, hours, minutes, seconds });
-    }, 1000);
+      this.setState({ days, hours, minutes, seconds })
+    }, 1000)
   }
   componentWillUnmount() {
     if (this.interval) {
-      clearInterval(this.interval);
+      clearInterval(this.interval)
     }
   }
   render() {
-    const { days, hours, minutes, seconds } = this.state;
+    const { days, hours, minutes, seconds } = this.state
     return (
       <div className='date-box'>
         <h1 className='date-box__date'>29.05.2021</h1>
@@ -58,6 +58,6 @@ export default class DateCounter extends React.Component {
           )}
         </div>
       </div>
-    );
+    )
   }
 }
