@@ -30,7 +30,7 @@ export default class DateCounter extends React.Component {
     const { days, hours, minutes, seconds } = this.state
     return (
       <div className='date-box'>
-        <h1 className='date-box__date'>29.05.2021</h1>
+        <h1 className='date-box__date'>24.07.2021</h1>
         <div className='countdown-wrapper'>
           {days && (
             <div className='countdown-item'>
