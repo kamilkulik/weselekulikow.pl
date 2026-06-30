@@ -29,7 +29,7 @@ class MapPage extends React.Component {
             <div className='map-container'>
               <LoadScript
                 id='WeselnaMap'
-                googleMapsApiKey={process.env.REACT_APP_MAP_KEY}
+                googleMapsApiKey={import.meta.env.VITE_MAP_KEY}
                 version={'weekly'}>
                 <GoogleMap
                   id='WeselnaMap'
